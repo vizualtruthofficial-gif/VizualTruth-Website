@@ -165,8 +165,10 @@
     const detailDescription = document.querySelector("[data-detail-description]");
     const detailArticle = document.querySelector("[data-detail-article]");
     const detailPress = document.querySelector("[data-detail-press]");
+    const AUTOPLAY_MS = 3600;
     let currentSlide = 0;
     let scrollTimer;
+    let autoSlideTimer;
 
     function updateCarouselState() {
       Array.from(dots.children).forEach((dot, index) => {
@@ -174,7 +176,26 @@
       });
     }
 
-    function goToSlide(index) {
+    function stopAutoplay() {
+      window.clearInterval(autoSlideTimer);
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      if (track.children.length <= 1) {
+        return;
+      }
+      autoSlideTimer = window.setInterval(() => {
+        goToSlide(currentSlide + 1);
+      }, AUTOPLAY_MS);
+    }
+
+    function restartAutoplay() {
+      stopAutoplay();
+      startAutoplay();
+    }
+
+    function goToSlide(index, resetAutoplay = false) {
       const slides = Array.from(track.children);
       if (!slides.length) {
         return;
@@ -182,6 +203,9 @@
       currentSlide = (index + slides.length) % slides.length;
       track.scrollTo({ left: slides[currentSlide].offsetLeft, behavior: "smooth" });
       updateCarouselState();
+      if (resetAutoplay) {
+        restartAutoplay();
+      }
     }
 
     function renderSlides(game) {
@@ -215,11 +239,12 @@
         dot.type = "button";
         dot.className = "carousel-dot";
         dot.setAttribute("aria-label", `Show image ${index + 1}`);
-        dot.addEventListener("click", () => goToSlide(index));
+        dot.addEventListener("click", () => goToSlide(index, true));
         dots.append(dot);
       });
 
       updateCarouselState();
+      startAutoplay();
     }
 
     function selectGame(key) {
@@ -246,8 +271,8 @@
       button.addEventListener("click", () => selectGame(button.dataset.game));
     });
 
-    prevButton.addEventListener("click", () => goToSlide(currentSlide - 1));
-    nextButton.addEventListener("click", () => goToSlide(currentSlide + 1));
+    prevButton.addEventListener("click", () => goToSlide(currentSlide - 1, true));
+    nextButton.addEventListener("click", () => goToSlide(currentSlide + 1, true));
     track.addEventListener("scroll", () => {
       window.clearTimeout(scrollTimer);
       scrollTimer = window.setTimeout(() => {
