@@ -1,16 +1,10 @@
 :root {
-  --ink: #090a0d;
-  --panel: #15171c;
-  --panel-strong: #1f222a;
-  --paper: #f4f1ea;
-  --soft: #c9c2b7;
-  --muted: #8f938f;
-  --line: rgba(244, 241, 234, 0.14);
-  --red: #a71f2a;
-  --amber: #d59f34;
-  --teal: #1d9e93;
-  --blue: #415fd1;
-  --green: #6f9d44;
+  --black: #101214;
+  --white: #ffffff;
+  --baby-blue: #aee6fa;
+  --gray: #e9ecef;
+  --muted: #7a7a7a;
+  --line: #e3e8ee;
 }
 
 * {
@@ -23,23 +17,14 @@ html {
 
 body {
   margin: 0;
-  background: var(--ink);
-  color: var(--paper);
+  background: var(--white);
+  color: var(--black);
   font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.5;
 }
 
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    radial-gradient(circle at 70% 20%, rgba(65, 95, 209, 0.14), transparent 28%),
-    linear-gradient(145deg, #090a0d 0%, #121318 58%, #08090b 100%);
-  background-size: 40px 40px, 40px 40px, auto, auto;
+  content: none;
 }
 
 a {
@@ -58,9 +43,9 @@ img {
   top: 0;
   z-index: 10;
   border-bottom: 1px solid var(--line);
-  background: #181a1f;
-  backdrop-filter: blur(18px);
-  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+  background: var(--white);
+  color: var(--black);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
 }
 
 .site-header.navbar {
@@ -108,10 +93,10 @@ img {
 }
 
 .brand-word {
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 750;
-  letter-spacing: 0;
+  color: var(--baby-blue);
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
 }
 
 .top-tabs,
@@ -514,15 +499,11 @@ h3 {
 
 .asset-swatch {
   display: block;
-  min-height: 116px;
-  border: 1px solid rgba(244, 241, 234, 0.18);
-  border-radius: 8px;
-}
-
-.swatch-night {
-  background: linear-gradient(135deg, #0b0b0e, #3b1118, #a71f2a);
-}
-
+  .swatch-night,
+  .swatch-whole,
+  .swatch-wizard {
+    background: var(--baby-blue) !important;
+  }
 .swatch-whole {
   background: linear-gradient(135deg, #10151c, #1d9e93, #3c141c);
 }
