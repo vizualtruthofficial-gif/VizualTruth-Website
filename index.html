@@ -41,38 +41,22 @@
         <h2 id="games-title">Games</h2>
       </div>
 
-      <div class="games-layout">
-        <article class="game-detail-panel" aria-live="polite">
-          <div class="detail-carousel" data-carousel>
-            <div class="detail-track" data-carousel-track tabindex="0" aria-label="Selected game images"></div>
-            <button class="carousel-button carousel-button-prev" type="button" data-carousel-prev aria-label="Previous image">&lt;</button>
-            <button class="carousel-button carousel-button-next" type="button" data-carousel-next aria-label="Next image">&gt;</button>
-            <div class="carousel-dots" data-carousel-dots aria-label="Image position"></div>
-          </div>
-          <div class="detail-copy">
-            <p class="eyebrow" data-detail-meta>Horror</p>
-            <h3 data-detail-title>Night Inn</h3>
-            <p data-detail-description>A tense stay inside a place that does not want its guests to leave.</p>
-            <div class="detail-actions">
-              <a class="detail-link" data-detail-article href="games/night-inn.html">Article</a>
-              <a class="detail-link" data-detail-press href="press-kits/night-inn.html">Press Kit</a>
-            </div>
-          </div>
-        </article>
-
-        <div class="game-list" role="list" aria-label="Select a game">
-          <button class="card h-100 game-card game-card-night is-active" type="button" data-game="night-inn" aria-pressed="true">
-            <span class="poster poster-night poster-with-title-asset" role="img" aria-label="Title artwork for Night Inn">
-              <img class="poster-title-asset" src="Assets/Games/Night-Inn/night-inn-title.png" alt="Night Inn title artwork">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <a class="card h-100 game-card game-card-night" href="games/night-inn.html" target="_blank" rel="noopener">
+            <span class="poster poster-night" role="img" aria-label="Placeholder key art for Night Inn">
+              <span class="poster-label">Night Inn</span>
             </span>
             <span class="card-body game-card-body">
               <span class="game-meta">Horror</span>
               <span class="game-title">Night Inn</span>
               <span class="game-copy">A tense stay inside a place that does not want its guests to leave.</span>
             </span>
-          </button>
+          </a>
+        </div>
 
-          <button class="card h-100 game-card game-card-whole" type="button" data-game="swallowed-whole" aria-pressed="false">
+        <div class="col-md-6 col-lg-4">
+          <a class="card h-100 game-card game-card-whole" href="games/night-inn-swallowed-whole.html" target="_blank" rel="noopener">
             <span class="poster poster-whole" role="img" aria-label="Placeholder key art for Night Inn: Swallowed Whole">
               <span class="poster-label">Swallowed Whole</span>
             </span>
@@ -81,9 +65,11 @@
               <span class="game-title">Night Inn: Swallowed Whole</span>
               <span class="game-copy">The nightmare expands into a multiplayer fight for escape and survival.</span>
             </span>
-          </button>
+          </a>
+        </div>
 
-          <button class="card h-100 game-card game-card-wizard" type="button" data-game="wizard-valley" aria-pressed="false">
+        <div class="col-md-6 col-lg-4">
+          <a class="card h-100 game-card game-card-wizard" href="games/wizard-valley.html" target="_blank" rel="noopener">
             <span class="poster poster-wizard" role="img" aria-label="Placeholder key art for Wizard Valley">
               <span class="poster-label">Wizard Valley</span>
             </span>
@@ -92,7 +78,7 @@
               <span class="game-title">Wizard Valley</span>
               <span class="game-copy">Fast spellcasting, team pressure, and arena-scale fantasy battles.</span>
             </span>
-          </button>
+          </a>
         </div>
       </div>
     </section>
@@ -112,162 +98,5 @@
     <p>VizualTruth</p>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-  <script>
-    const games = {
-      "night-inn": {
-        title: "Night Inn",
-        meta: "Horror",
-        description: "A tense stay inside a place that does not want its guests to leave. Explore the inn, read the room, and piece together why every quiet corner feels staged.",
-        article: "games/night-inn.html",
-        press: "press-kits/night-inn.html",
-        images: [
-          { src: "Assets/Games/Night-Inn/night-inn-title.png", alt: "Night Inn title artwork" },
-          { src: "Assets/Games/Night-Inn/night-inn-description.png", alt: "Night Inn description artwork" },
-          { src: "Assets/Games/Night-Inn/night-inn-amy.png", alt: "Amy character artwork" },
-          { src: "Assets/Games/Night-Inn/night-inn-amy-trick.png", alt: "Amy trick artwork" },
-          { src: "Assets/Games/Night-Inn/night-inn-amy-treat.png", alt: "Amy treat artwork" },
-          { src: "Assets/Games/Night-Inn/night-inn-sketch.png", alt: "Night Inn sketch artwork" },
-          { src: "Assets/Games/Night-Inn/night-inn-doodle.png", alt: "Night Inn doodle artwork" }
-        ]
-      },
-      "swallowed-whole": {
-        title: "Night Inn: Swallowed Whole",
-        meta: "Multiplayer horror",
-        description: "The nightmare expands into a multiplayer fight for escape and survival. Players coordinate under pressure while the building reacts to the group.",
-        article: "games/night-inn-swallowed-whole.html",
-        press: "press-kits/night-inn-swallowed-whole.html",
-        placeholderClass: "poster-whole",
-        placeholderLabel: "Swallowed Whole"
-      },
-      "wizard-valley": {
-        title: "Wizard Valley",
-        meta: "Action multiplayer",
-        description: "Fast spellcasting, team pressure, and arena-scale fantasy battles across a contested valley built for quick reads and chaotic turns.",
-        article: "games/wizard-valley.html",
-        press: "press-kits/wizard-valley.html",
-        placeholderClass: "poster-wizard",
-        placeholderLabel: "Wizard Valley"
-      }
-    };
-
-    const buttons = Array.from(document.querySelectorAll("[data-game]"));
-    const track = document.querySelector("[data-carousel-track]");
-    const dots = document.querySelector("[data-carousel-dots]");
-    const carousel = document.querySelector("[data-carousel]");
-    const prevButton = document.querySelector("[data-carousel-prev]");
-    const nextButton = document.querySelector("[data-carousel-next]");
-    const detailMeta = document.querySelector("[data-detail-meta]");
-    const detailTitle = document.querySelector("[data-detail-title]");
-    const detailDescription = document.querySelector("[data-detail-description]");
-    const detailArticle = document.querySelector("[data-detail-article]");
-    const detailPress = document.querySelector("[data-detail-press]");
-    let currentSlide = 0;
-
-    function renderSlides(game) {
-      track.innerHTML = "";
-      dots.innerHTML = "";
-      currentSlide = 0;
-
-      const slides = game.images && game.images.length ? game.images : [{ placeholder: true }];
-      carousel.classList.toggle("has-multiple-slides", slides.length > 1);
-
-      slides.forEach((slide, index) => {
-        const item = document.createElement("figure");
-        item.className = "detail-slide";
-
-        if (slide.placeholder) {
-          item.classList.add("detail-placeholder", "poster", game.placeholderClass);
-          const label = document.createElement("span");
-          label.className = "poster-label";
-          label.textContent = game.placeholderLabel;
-          item.append(label);
-        } else {
-          const image = document.createElement("img");
-          image.src = slide.src;
-          image.alt = slide.alt;
-          item.append(image);
-        }
-
-        track.append(item);
-
-        const dot = document.createElement("button");
-        dot.type = "button";
-        dot.className = "carousel-dot";
-        dot.setAttribute("aria-label", `Show image ${index + 1}`);
-        dot.addEventListener("click", () => goToSlide(index));
-        dots.append(dot);
-      });
-
-      updateCarouselState();
-    }
-
-    function goToSlide(index) {
-      const slides = Array.from(track.children);
-      if (!slides.length) {
-        return;
-      }
-      currentSlide = (index + slides.length) % slides.length;
-      track.scrollTo({ left: slides[currentSlide].offsetLeft, behavior: "smooth" });
-      updateCarouselState();
-    }
-
-    function updateCarouselState() {
-      Array.from(dots.children).forEach((dot, index) => {
-        dot.classList.toggle("is-active", index === currentSlide);
-      });
-    }
-
-    function selectGame(key) {
-      const game = games[key];
-      if (!game) {
-        return;
-      }
-
-      buttons.forEach((button) => {
-        const selected = button.dataset.game === key;
-        button.classList.toggle("is-active", selected);
-        button.setAttribute("aria-pressed", selected ? "true" : "false");
-      });
-
-      detailMeta.textContent = game.meta;
-      detailTitle.textContent = game.title;
-      detailDescription.textContent = game.description;
-      detailArticle.href = game.article;
-      detailPress.href = game.press;
-      renderSlides(game);
-    }
-
-    buttons.forEach((button) => {
-      button.addEventListener("click", () => selectGame(button.dataset.game));
-    });
-
-    prevButton.addEventListener("click", () => goToSlide(currentSlide - 1));
-    nextButton.addEventListener("click", () => goToSlide(currentSlide + 1));
-    let scrollTimer;
-    track.addEventListener("scroll", () => {
-      window.clearTimeout(scrollTimer);
-      scrollTimer = window.setTimeout(() => {
-        const slides = Array.from(track.children);
-        const nearest = slides.reduce((best, slide, index) => {
-          const distance = Math.abs(slide.offsetLeft - track.scrollLeft);
-          return distance < best.distance ? { index, distance } : best;
-        }, { index: 0, distance: Number.POSITIVE_INFINITY });
-        currentSlide = nearest.index;
-        updateCarouselState();
-      }, 80);
-    });
-
-    track.addEventListener("scrollend", () => {
-      const slides = Array.from(track.children);
-      const nearest = slides.reduce((best, slide, index) => {
-        const distance = Math.abs(slide.offsetLeft - track.scrollLeft);
-        return distance < best.distance ? { index, distance } : best;
-      }, { index: 0, distance: Number.POSITIVE_INFINITY });
-      currentSlide = nearest.index;
-      updateCarouselState();
-    });
-
-    selectGame("night-inn");
-  </script>
 </body>
 </html>
