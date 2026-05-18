@@ -52,13 +52,15 @@ img {
   max-width: 100%;
 }
 
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 10;
   border-bottom: 1px solid var(--line);
-  background: rgba(9, 10, 13, 0.88);
-  backdrop-filter: blur(16px);
+  background: #181a1f;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
 }
 
 .site-header.navbar {
@@ -82,22 +84,27 @@ img {
   min-width: 0;
 }
 
+
 .logo-tile {
-  width: 48px;
-  height: 48px;
-  display: grid;
-  place-items: center;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 0 0 auto;
   overflow: hidden;
-  border: 1px solid rgba(9, 10, 13, 0.2);
-  border-radius: 6px;
+  border: 2px solid #fff;
+  border-radius: 12px;
   background: #fff;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
 }
 
+
 .logo-tile img {
-  width: 45px;
-  height: 45px;
-  object-fit: cover;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .brand-word {
@@ -138,27 +145,30 @@ img {
   color: var(--ink);
 }
 
+
 .landing-panel {
-  width: min(1180px, calc(100% - 32px));
-  min-height: calc(86vh - 76px);
+  width: min(1100px, calc(100% - 32px));
+  min-height: 68vh;
   margin: 0 auto;
-  padding: 72px 0 44px;
+  padding: 38px 0 18px;
 }
 
 .landing-panel > .row {
   width: 100%;
 }
 
+
 .landing-copy {
-  max-width: 720px;
+  max-width: 600px;
 }
 
+
 .eyebrow {
-  margin: 0 0 10px;
-  color: var(--soft);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0;
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 
@@ -170,10 +180,13 @@ h3 {
   letter-spacing: 0;
 }
 
+
 h1 {
   color: #fff;
-  font-size: clamp(4.25rem, 13vw, 9.6rem);
+  font-size: clamp(2.8rem, 7vw, 5.2rem);
   font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
 }
 
 h2 {
@@ -187,39 +200,48 @@ h3 {
   font-size: clamp(1.35rem, 3vw, 2.2rem);
 }
 
+
 .lead {
-  max-width: 620px;
-  margin: 22px 0 0;
+  max-width: 540px;
+  margin: 12px 0 0;
   color: var(--soft);
-  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  font-size: clamp(1.08rem, 2vw, 1.22rem);
 }
+
 
 .logo-showcase {
-  min-height: 360px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 8px;
-  background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(236, 234, 229, 0.92)),
-    #fff;
-  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.32);
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  box-shadow: none;
+  margin-bottom: 0;
 }
+
 
 .logo-showcase img {
-  width: min(78%, 420px);
+  width: 120px;
+  height: 120px;
   aspect-ratio: 1;
-  object-fit: cover;
+  object-fit: contain;
+  border-radius: 16px;
+  border: 2px solid #fff;
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.10);
 }
+
 
 .section-shell {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1100px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 82px 0;
+  padding: 44px 0 38px;
 }
 
+
 .section-heading {
-  margin-bottom: 28px;
+  margin-bottom: 18px;
 }
 
 .game-card {
@@ -346,10 +368,11 @@ h3 {
   line-height: 0.96;
 }
 
+
 .game-card-body {
   display: grid;
-  gap: 10px;
-  padding: 22px;
+  gap: 8px;
+  padding: 16px;
 }
 
 .game-meta,
@@ -375,8 +398,9 @@ h3 {
   color: var(--soft);
 }
 
+
 .merch-section {
-  padding-top: 42px;
+  padding-top: 24px;
 }
 
 .empty-state {
@@ -510,15 +534,16 @@ h3 {
 @media (max-width: 900px) {
   .landing-panel {
     min-height: auto;
-    padding-top: 48px;
+    padding-top: 24px;
+    padding-bottom: 8px;
   }
 
   .logo-showcase {
-    min-height: 260px;
+    min-height: 120px;
   }
 
   .hero-poster {
-    min-height: 420px;
+    min-height: 320px;
   }
 }
 
