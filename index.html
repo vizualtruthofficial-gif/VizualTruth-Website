@@ -18,9 +18,7 @@
         <span class="brand-word">VizualTruth</span>
       </a>
       <nav class="nav nav-pills top-tabs" aria-label="Main navigation">
-        <a class="nav-link" href="#featured">Night Inn</a>
         <a class="nav-link" href="#games">Games</a>
-        <a class="nav-link" href="#press">Press Kit</a>
         <a class="nav-link" href="#merch">Merch</a>
         <a class="nav-link" href="#contact">Contact</a>
       </nav>
@@ -33,129 +31,84 @@
         <div class="col-12 landing-copy">
           <p class="eyebrow">Anything is Possible</p>
           <h1 id="studio-title">VizualTruth</h1>
-          <p class="lead">VizualTruth is an independent game studio developing Night Inn, a psychological horror game about rules, trust, and survival inside a haunted hotel.</p>
+          <p class="lead">Independent games built around horror, pressure, and impossible choices.</p>
           <div class="hero-actions">
-            <a class="primary-action" href="#featured">View Night Inn</a>
-            <a class="secondary-action" href="press-kits/night-inn.html">Press Kit Coming Soon</a>
-            <span class="quiet-action">Steam Page Coming Soon</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="container section-shell featured-project" id="featured" aria-labelledby="featured-title">
-      <div class="featured-grid">
-        <div class="featured-media">
-          <img src="Assets/Games/Night-Inn/night-inn-title.png" alt="Night Inn title artwork">
-        </div>
-        <div class="featured-copy">
-          <p class="eyebrow">Featured project</p>
-          <span class="status-pill">In Pre-Production / Demo Target</span>
-          <h2 id="featured-title">Night Inn</h2>
-          <p>Night Inn is a first-person psychological horror game where the player works a hotel reception shift, checks in strange guests, follows supernatural rules, and survives entities that use fear, mimicry, and panic against them.</p>
-          <div class="feature-points" aria-label="Night Inn focus">
-            <span>Reception desk horror</span>
-            <span>Rule-based survival</span>
-            <span>Strange guest encounters</span>
-            <span>Public demo target</span>
-          </div>
-          <div class="hero-actions">
-            <a class="primary-action" href="games/night-inn.html">Read About Night Inn</a>
-            <a class="secondary-action" href="press-kits/night-inn.html">View Press Kit</a>
+            <a class="primary-action" href="#games">Explore Games</a>
+            <span class="quiet-action">Night Inn Demo Target</span>
           </div>
         </div>
       </div>
     </section>
 
     <section class="container section-shell" id="games" aria-labelledby="games-title">
-      <div class="section-heading">
-        <p class="eyebrow">Projects</p>
-        <h2 id="games-title">Current & Upcoming Games</h2>
+      <div class="section-heading compact-heading">
+        <p class="eyebrow">Current focus</p>
+        <h2 id="games-title">Games</h2>
       </div>
 
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4">
-          <a class="card h-100 game-card game-card-night" href="games/night-inn.html" target="_blank" rel="noopener">
-            <span class="poster poster-night" role="img" aria-label="Placeholder key art for Night Inn">
-              <span class="poster-label">Night Inn</span>
-            </span>
-            <span class="card-body game-card-body">
-              <span class="game-meta">In Pre-Production / Demo Target</span>
-              <span class="game-title">Night Inn</span>
-              <span class="game-copy">Work the night shift, follow the rules, check in strange guests, and survive until morning.</span>
-            </span>
-          </a>
-        </div>
+      <div class="games-experience">
+        <article class="game-detail-panel" aria-live="polite">
+          <div class="detail-carousel" data-carousel>
+            <div class="detail-track" data-carousel-track tabindex="0" aria-label="Selected game images"></div>
+            <button class="carousel-button carousel-button-prev" type="button" data-carousel-prev aria-label="Previous image">&lt;</button>
+            <button class="carousel-button carousel-button-next" type="button" data-carousel-next aria-label="Next image">&gt;</button>
+            <div class="carousel-dots" data-carousel-dots aria-label="Image position"></div>
+          </div>
+          <div class="detail-copy">
+            <p class="eyebrow" data-detail-meta>In Pre-Production / Demo Target</p>
+            <h3 data-detail-title>Night Inn</h3>
+            <p data-detail-description>Work the night shift, follow supernatural rules, check in strange guests, and survive until morning.</p>
+            <div class="detail-actions">
+              <a class="primary-action" data-detail-article href="games/night-inn.html">Read More</a>
+              <a class="secondary-action" data-detail-press href="press-kits/night-inn.html">Press Kit</a>
+            </div>
+          </div>
+        </article>
 
-        <div class="col-md-6 col-lg-4">
-          <a class="card h-100 game-card game-card-whole" href="games/night-inn-swallowed-whole.html" target="_blank" rel="noopener">
-            <span class="poster poster-whole" role="img" aria-label="Placeholder key art for Night Inn: Swallowed Whole">
+        <div class="game-title-grid" role="list" aria-label="Select a game">
+          <button class="game-select-card game-card-night is-active" type="button" data-game="night-inn" aria-pressed="true">
+            <span class="game-thumb">
+              <img src="Assets/Games/Night-Inn/night-inn-title.png" alt="Night Inn title artwork">
+            </span>
+            <span class="game-select-copy">
+              <span class="game-meta">In Pre-Production</span>
+              <span class="game-title">Night Inn</span>
+            </span>
+          </button>
+
+          <button class="game-select-card game-card-whole" type="button" data-game="swallowed-whole" aria-pressed="false">
+            <span class="game-thumb poster poster-whole">
               <span class="poster-label">Swallowed Whole</span>
             </span>
-            <span class="card-body game-card-body">
+            <span class="game-select-copy">
               <span class="game-meta">Concept</span>
               <span class="game-title">Night Inn: Swallowed Whole</span>
-              <span class="game-copy">A future multiplayer horror concept expanding the Night Inn nightmare into cooperative survival.</span>
             </span>
-          </a>
-        </div>
+          </button>
 
-        <div class="col-md-6 col-lg-4">
-          <a class="card h-100 game-card game-card-wizard" href="games/wizard-valley.html" target="_blank" rel="noopener">
-            <span class="poster poster-wizard" role="img" aria-label="Placeholder key art for Wizard Valley">
+          <button class="game-select-card game-card-wizard" type="button" data-game="wizard-valley" aria-pressed="false">
+            <span class="game-thumb poster poster-wizard">
               <span class="poster-label">Wizard Valley</span>
             </span>
-            <span class="card-body game-card-body">
-              <span class="game-meta">Concept / Future Project</span>
+            <span class="game-select-copy">
+              <span class="game-meta">Future Project</span>
               <span class="game-title">Wizard Valley</span>
-              <span class="game-copy">A future action multiplayer concept built around spell pressure, movement, and arena battles.</span>
             </span>
-          </a>
+          </button>
         </div>
       </div>
     </section>
 
-    <section class="container section-shell split-section" id="press" aria-labelledby="press-title">
-      <div>
-        <p class="eyebrow">Media</p>
-        <h2 id="press-title">Press Kit</h2>
-      </div>
+    <section class="container section-shell small-info-grid" id="merch" aria-label="Studio information">
       <div class="info-panel">
-        <h3>Night Inn Press Kit Coming Soon</h3>
-        <p>Approved screenshots, trailer, logos, platform details, fact sheet, and contact information will be added as Night Inn moves closer to the public demo.</p>
-        <a class="secondary-action" href="press-kits/night-inn.html">Open Press Kit</a>
+        <p class="eyebrow">Merch</p>
+        <h2>Coming Soon</h2>
+        <p>VizualTruth and Night Inn merch drops are planned for future releases.</p>
       </div>
-    </section>
-
-    <section class="container section-shell split-section" id="about" aria-labelledby="about-title">
-      <div>
-        <p class="eyebrow">Studio mission</p>
-        <h2 id="about-title">About VizualTruth</h2>
-      </div>
-      <div class="info-panel">
-        <h3>Stylized worlds built around pressure.</h3>
-        <p>VizualTruth is an independent game studio focused on cinematic tension, memorable characters, and gameplay built around pressure, choice, and survival.</p>
-      </div>
-    </section>
-
-    <section class="container section-shell merch-section" id="merch" aria-labelledby="merch-title">
-      <div class="section-heading">
-        <p class="eyebrow">Studio releases</p>
-        <h2 id="merch-title">Merch Coming Soon</h2>
-      </div>
-      <div class="empty-state">
-        <p>VizualTruth and Night Inn merch drops are planned for future releases. Check back for apparel, posters, and limited studio drops.</p>
-      </div>
-    </section>
-
-    <section class="container section-shell split-section contact-section" id="contact" aria-labelledby="contact-title">
-      <div>
-        <p class="eyebrow">Business / Press / Collaboration</p>
-        <h2 id="contact-title">Contact</h2>
-      </div>
-      <div class="info-panel">
-        <h3>Reach VizualTruth</h3>
-        <p>For press, business, contractor, or collaboration inquiries, contact the studio directly.</p>
+      <div class="info-panel" id="contact">
+        <p class="eyebrow">Contact</p>
+        <h2>Reach VizualTruth</h2>
+        <p>For press, business, contractor, or collaboration inquiries.</p>
         <a class="primary-action" href="mailto:contact@vizualtruth.com">contact@vizualtruth.com</a>
       </div>
     </section>
@@ -164,6 +117,151 @@
   <footer class="site-footer">
     <p>VizualTruth</p>
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script>
+    const games = {
+      "night-inn": {
+        title: "Night Inn",
+        meta: "In Pre-Production / Demo Target",
+        description: "Work the night shift, follow supernatural rules, check in strange guests, and survive until morning.",
+        article: "games/night-inn.html",
+        press: "press-kits/night-inn.html",
+        images: [
+          { src: "Assets/Games/Night-Inn/night-inn-title.png", alt: "Night Inn title artwork" },
+          { src: "Assets/Games/Night-Inn/night-inn-description.png", alt: "Night Inn description artwork" },
+          { src: "Assets/Games/Night-Inn/night-inn-amy.png", alt: "Amy character artwork" },
+          { src: "Assets/Games/Night-Inn/night-inn-amy-trick.png", alt: "Amy trick artwork" },
+          { src: "Assets/Games/Night-Inn/night-inn-amy-treat.png", alt: "Amy treat artwork" },
+          { src: "Assets/Games/Night-Inn/night-inn-sketch.png", alt: "Night Inn sketch artwork" }
+        ]
+      },
+      "swallowed-whole": {
+        title: "Night Inn: Swallowed Whole",
+        meta: "Concept",
+        description: "A future multiplayer horror concept expanding the Night Inn nightmare into cooperative survival.",
+        article: "games/night-inn-swallowed-whole.html",
+        press: "press-kits/night-inn-swallowed-whole.html",
+        placeholderClass: "poster-whole",
+        placeholderLabel: "Swallowed Whole"
+      },
+      "wizard-valley": {
+        title: "Wizard Valley",
+        meta: "Concept / Future Project",
+        description: "A future action multiplayer concept built around spell pressure, movement, and arena battles.",
+        article: "games/wizard-valley.html",
+        press: "press-kits/wizard-valley.html",
+        placeholderClass: "poster-wizard",
+        placeholderLabel: "Wizard Valley"
+      }
+    };
+
+    const buttons = Array.from(document.querySelectorAll("[data-game]"));
+    const track = document.querySelector("[data-carousel-track]");
+    const dots = document.querySelector("[data-carousel-dots]");
+    const carousel = document.querySelector("[data-carousel]");
+    const prevButton = document.querySelector("[data-carousel-prev]");
+    const nextButton = document.querySelector("[data-carousel-next]");
+    const detailMeta = document.querySelector("[data-detail-meta]");
+    const detailTitle = document.querySelector("[data-detail-title]");
+    const detailDescription = document.querySelector("[data-detail-description]");
+    const detailArticle = document.querySelector("[data-detail-article]");
+    const detailPress = document.querySelector("[data-detail-press]");
+    let currentSlide = 0;
+    let scrollTimer;
+
+    function updateCarouselState() {
+      Array.from(dots.children).forEach((dot, index) => {
+        dot.classList.toggle("is-active", index === currentSlide);
+      });
+    }
+
+    function goToSlide(index) {
+      const slides = Array.from(track.children);
+      if (!slides.length) {
+        return;
+      }
+      currentSlide = (index + slides.length) % slides.length;
+      track.scrollTo({ left: slides[currentSlide].offsetLeft, behavior: "smooth" });
+      updateCarouselState();
+    }
+
+    function renderSlides(game) {
+      track.innerHTML = "";
+      dots.innerHTML = "";
+      currentSlide = 0;
+
+      const slides = game.images && game.images.length ? game.images : [{ placeholder: true }];
+      carousel.classList.toggle("has-multiple-slides", slides.length > 1);
+
+      slides.forEach((slide, index) => {
+        const item = document.createElement("figure");
+        item.className = "detail-slide";
+
+        if (slide.placeholder) {
+          item.classList.add("poster", game.placeholderClass);
+          const label = document.createElement("span");
+          label.className = "poster-label";
+          label.textContent = game.placeholderLabel;
+          item.append(label);
+        } else {
+          const image = document.createElement("img");
+          image.src = slide.src;
+          image.alt = slide.alt;
+          item.append(image);
+        }
+
+        track.append(item);
+
+        const dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "carousel-dot";
+        dot.setAttribute("aria-label", `Show image ${index + 1}`);
+        dot.addEventListener("click", () => goToSlide(index));
+        dots.append(dot);
+      });
+
+      updateCarouselState();
+    }
+
+    function selectGame(key) {
+      const game = games[key];
+      if (!game) {
+        return;
+      }
+
+      buttons.forEach((button) => {
+        const selected = button.dataset.game === key;
+        button.classList.toggle("is-active", selected);
+        button.setAttribute("aria-pressed", selected ? "true" : "false");
+      });
+
+      detailMeta.textContent = game.meta;
+      detailTitle.textContent = game.title;
+      detailDescription.textContent = game.description;
+      detailArticle.href = game.article;
+      detailPress.href = game.press;
+      renderSlides(game);
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => selectGame(button.dataset.game));
+    });
+
+    prevButton.addEventListener("click", () => goToSlide(currentSlide - 1));
+    nextButton.addEventListener("click", () => goToSlide(currentSlide + 1));
+    track.addEventListener("scroll", () => {
+      window.clearTimeout(scrollTimer);
+      scrollTimer = window.setTimeout(() => {
+        const slides = Array.from(track.children);
+        const nearest = slides.reduce((best, slide, index) => {
+          const distance = Math.abs(slide.offsetLeft - track.scrollLeft);
+          return distance < best.distance ? { index, distance } : best;
+        }, { index: 0, distance: Number.POSITIVE_INFINITY });
+        currentSlide = nearest.index;
+        updateCarouselState();
+      }, 80);
+    });
+
+    selectGame("night-inn");
+  </script>
 </body>
 </html>
