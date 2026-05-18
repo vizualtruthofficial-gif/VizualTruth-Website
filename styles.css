@@ -4,7 +4,8 @@
   --white: #ffffff;
   --paper: #ffffff;
   --baby-blue: #35b6e5;
-  --baby-blue-soft: #e4f7fd;
+  --baby-blue-soft: #e7f8ff;
+  --baby-blue-wash: #f1fbff;
   --gray: #f5f8fa;
   --muted: #67727e;
   --soft: #46515d;
@@ -27,7 +28,7 @@ html {
 body {
   margin: 0;
   background:
-    linear-gradient(180deg, #ffffff 0%, #f7fbfd 45%, #ffffff 100%);
+    linear-gradient(180deg, var(--baby-blue-wash) 0%, #ffffff 34%, #f8fbfd 66%, #ffffff 100%);
   color: var(--ink);
   font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.5;
@@ -64,7 +65,7 @@ img {
 }
 
 .g-4 {
-  --grid-gap: 1.5rem;
+  --grid-gap: 1rem;
 }
 
 .g-5 {
@@ -203,13 +204,30 @@ img {
 
 .landing-panel {
   width: min(1100px, calc(100% - 32px));
-  min-height: 58vh;
+  min-height: 36vh;
   margin: 0 auto;
-  padding: clamp(58px, 10vw, 112px) 0 clamp(42px, 8vw, 88px);
+  position: relative;
+  overflow: hidden;
+  padding: clamp(34px, 6vw, 64px) clamp(18px, 4vw, 42px) clamp(28px, 5vw, 46px);
   border-bottom: 1px solid var(--line);
+  border-radius: 0 0 28px 28px;
+  background:
+    linear-gradient(135deg, rgba(231, 248, 255, 0.92), rgba(255, 255, 255, 0.7) 58%),
+    linear-gradient(90deg, rgba(53, 182, 229, 0.14), transparent 48%);
+}
+
+.landing-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 8px;
+  background: var(--baby-blue);
+  opacity: 0.52;
 }
 
 .landing-panel > .row {
+  position: relative;
+  z-index: 1;
   width: 100%;
   margin-right: 0;
   margin-left: 0;
@@ -217,8 +235,6 @@ img {
 
 .landing-copy {
   max-width: 780px;
-  padding-right: 0;
-  padding-left: 0;
 }
 
 .eyebrow {
@@ -243,6 +259,14 @@ h1 {
   font-size: clamp(3.2rem, 8vw, 6.2rem);
   font-weight: 900;
   margin-bottom: 16px;
+}
+
+.landing-copy h1 {
+  color: #075a78;
+}
+
+.landing-copy .eyebrow {
+  color: #168db8;
 }
 
 h2 {
@@ -286,11 +310,11 @@ h3 {
 .section-shell {
   width: min(1100px, calc(100% - 32px));
   margin: 0 auto;
-  padding: clamp(42px, 7vw, 72px) 0;
+  padding: clamp(24px, 4vw, 40px) 0;
 }
 
 .section-heading {
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .game-card {
@@ -331,57 +355,60 @@ h3 {
 .poster-night {
   background:
     linear-gradient(180deg, transparent 0 45%, rgba(0, 0, 0, 0.82) 100%),
-    linear-gradient(132deg, #09090c 0%, #211018 54%, #441820 100%);
+    linear-gradient(132deg, #09090c 0%, #211018 58%, #3a1118 100%);
 }
 
 .poster-night::before {
-  left: 18%;
-  right: 18%;
-  top: 18%;
-  bottom: 12%;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  left: 28%;
+  right: 28%;
+  top: 16%;
+  bottom: 16%;
+  border: 2px solid rgba(255, 255, 255, 0.22);
+  border-radius: 4px 4px 0 0;
   background:
-    linear-gradient(90deg, transparent 0 47%, rgba(255, 255, 255, 0.18) 48% 52%, transparent 53%),
+    radial-gradient(circle at 82% 48%, rgba(255, 255, 255, 0.75) 0 4px, transparent 5px),
+    linear-gradient(90deg, transparent 0 48%, rgba(255, 255, 255, 0.14) 49% 51%, transparent 52%),
     linear-gradient(180deg, #111 0%, #0b0b0d 45%, #230d11 100%);
   box-shadow: 0 0 42px rgba(167, 31, 42, 0.42);
 }
 
 .poster-night::after {
-  top: 11%;
-  left: 50%;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 0 34px rgba(255, 255, 255, 0.28);
-  transform: translateX(-50%);
+  top: 0;
+  left: 12%;
+  width: 28%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), transparent);
+  transform: skewX(-12deg);
 }
 
 .poster-whole {
   background:
-    linear-gradient(180deg, transparent 0 40%, rgba(0, 0, 0, 0.8) 100%),
-    radial-gradient(circle at 50% 46%, rgba(167, 31, 42, 0.72), transparent 34%),
+    linear-gradient(180deg, transparent 0 36%, rgba(0, 0, 0, 0.82) 100%),
+    radial-gradient(ellipse at 50% 45%, rgba(167, 31, 42, 0.82), transparent 37%),
     linear-gradient(145deg, #0c0d10, #17212a 46%, #3c141c);
 }
 
 .poster-whole::before {
-  top: 24%;
-  left: 12%;
-  right: 12%;
-  height: 42%;
+  top: 23%;
+  left: 9%;
+  right: 9%;
+  height: 34%;
   border: 2px solid rgba(244, 241, 234, 0.18);
-  border-radius: 50%;
-  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.2) 0 3px, transparent 3px 18px);
-  transform: rotate(-4deg);
+  border-radius: 999px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.28) 0 5px, transparent 5px 20px),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.72));
+  transform: rotate(-3deg);
 }
 
 .poster-whole::after {
-  inset: auto 14% 24% 14%;
-  height: 56px;
-  border-top: 1px solid rgba(244, 241, 234, 0.22);
-  border-bottom: 1px solid rgba(244, 241, 234, 0.22);
-  background: linear-gradient(90deg, var(--teal), transparent, var(--red));
-  opacity: 0.8;
+  inset: 44% 18% auto 18%;
+  height: 44px;
+  border-radius: 999px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.38) 0 3px, transparent 3px 16px),
+    linear-gradient(90deg, var(--teal), transparent, var(--red));
+  opacity: 0.92;
 }
 
 .poster-wizard {
@@ -393,18 +420,20 @@ h3 {
 }
 
 .poster-wizard::before {
-  inset: 16% 30% 24%;
+  inset: 15% 24% 28%;
   border: 2px solid rgba(244, 241, 234, 0.36);
-  border-radius: 50% 50% 7px 7px;
+  border-radius: 18px 18px 7px 7px;
   background:
     linear-gradient(45deg, transparent 0 45%, rgba(244, 241, 234, 0.75) 46% 50%, transparent 51%),
-    linear-gradient(-45deg, transparent 0 45%, rgba(244, 241, 234, 0.75) 46% 50%, transparent 51%);
+    linear-gradient(-45deg, transparent 0 45%, rgba(244, 241, 234, 0.75) 46% 50%, transparent 51%),
+    linear-gradient(180deg, rgba(213, 159, 52, 0.2), rgba(65, 95, 209, 0.18));
   box-shadow: 0 0 44px rgba(213, 159, 52, 0.28);
+  transform: rotate(45deg);
 }
 
 .poster-wizard::after {
-  inset: auto 18% 24% 18%;
-  height: 20px;
+  inset: auto 12% 25% 20%;
+  height: 28px;
   background: linear-gradient(90deg, var(--amber), var(--teal), var(--blue));
   transform: skewX(-18deg);
 }
@@ -415,9 +444,44 @@ h3 {
   right: 22px;
   bottom: 20px;
   color: #fff;
-  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  font-size: clamp(1.45rem, 3vw, 2.35rem);
   font-weight: 900;
-  line-height: 0.96;
+  line-height: 1;
+}
+
+.poster-night .poster-label {
+  right: auto;
+  max-width: calc(100% - 44px);
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.58);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.poster-whole .poster-label {
+  left: 50%;
+  right: auto;
+  bottom: 28px;
+  width: min(82%, 260px);
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(10, 13, 16, 0.68);
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.poster-wizard .poster-label {
+  left: 18px;
+  right: auto;
+  bottom: 28px;
+  width: min(84%, 280px);
+  padding: 11px 18px;
+  background: rgba(13, 24, 29, 0.75);
+  clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%, 8% 50%);
+  text-align: center;
 }
 
 .game-card-body {
@@ -442,6 +506,40 @@ h3 {
   font-size: 1.25rem;
   font-weight: 850;
   line-height: 1.08;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.game-title::before {
+  content: "";
+  display: inline-block;
+  flex: 0 0 auto;
+}
+
+.game-card-night .game-title::before {
+  width: 24px;
+  height: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 2px 2px 0 0;
+  background: linear-gradient(180deg, #301018, #13080b);
+}
+
+.game-card-whole .game-title::before {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.36);
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--teal), var(--red));
+}
+
+.game-card-wizard .game-title::before {
+  width: 17px;
+  height: 17px;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 3px;
+  background: linear-gradient(135deg, var(--amber), var(--blue));
+  transform: rotate(45deg);
 }
 
 .game-copy {
@@ -455,11 +553,11 @@ h3 {
 }
 
 .merch-section {
-  padding-top: 16px;
+  padding-top: 8px;
 }
 
 .empty-state {
-  min-height: 170px;
+  min-height: 130px;
   display: grid;
   place-items: center;
   padding: 24px;
@@ -478,7 +576,7 @@ h3 {
 .site-footer {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 28px 0 42px;
+  padding: 22px 0 34px;
   border-top: 1px solid var(--line);
   color: var(--muted);
 }
@@ -490,7 +588,7 @@ h3 {
 .page-hero {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
-  padding: clamp(36px, 7vw, 64px) 0 34px;
+  padding: clamp(28px, 5vw, 48px) 0 24px;
 }
 
 .game-hero-copy {
@@ -546,12 +644,12 @@ h3 {
 .content-shell {
   width: min(980px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 44px 0 82px;
+  padding: 28px 0 48px;
 }
 
 .article-body {
   display: grid;
-  gap: 24px;
+  gap: 18px;
 }
 
 .article-body p {
@@ -560,7 +658,7 @@ h3 {
 }
 
 .fact-row {
-  margin-top: 14px;
+  margin-top: 4px;
 }
 
 .fact {
@@ -583,7 +681,7 @@ h3 {
 }
 
 .kit-grid {
-  margin-top: 28px;
+  margin-top: 18px;
 }
 
 .kit-card {
@@ -708,7 +806,7 @@ h3 {
   }
 
   .section-shell {
-    padding: 44px 0;
+    padding: 34px 0;
   }
 
   .poster {
@@ -723,5 +821,25 @@ h3 {
     left: 16px;
     right: 16px;
     bottom: 16px;
+  }
+
+  .poster-night .poster-label {
+    right: auto;
+    max-width: calc(100% - 32px);
+  }
+
+  .poster-whole .poster-label {
+    left: 50%;
+    right: auto;
+    bottom: 20px;
+    width: min(84%, 240px);
+    transform: translateX(-50%);
+  }
+
+  .poster-wizard .poster-label {
+    left: 16px;
+    right: auto;
+    bottom: 20px;
+    width: min(86%, 250px);
   }
 }
