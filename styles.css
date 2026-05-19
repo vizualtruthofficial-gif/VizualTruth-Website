@@ -151,7 +151,7 @@ img {
   flex: 0 0 auto;
   overflow: hidden;
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 999px;
   background: #fff;
   box-shadow: 0 8px 22px rgba(16, 18, 20, 0.08);
 }
@@ -160,7 +160,7 @@ img {
   width: 48px;
   height: 48px;
   object-fit: contain;
-  border-radius: 8px;
+  border-radius: 999px;
 }
 
 .brand-word {
@@ -927,6 +927,38 @@ h3 {
   transform: skewX(-18deg);
 }
 
+.poster-whole,
+.poster-wizard,
+.poster-spiral {
+  background:
+    linear-gradient(180deg, rgba(5, 7, 9, 0.06) 0 44%, rgba(5, 7, 9, 0.86) 100%),
+    linear-gradient(135deg, #0c1014 0%, #142733 54%, #08171d 100%);
+}
+
+.poster-whole::before,
+.poster-wizard::before,
+.poster-spiral::before {
+  inset: 17%;
+  border: 1px solid rgba(53, 182, 229, 0.34);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, transparent 0 48%, rgba(53, 182, 229, 0.34) 49% 51%, transparent 52%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(53, 182, 229, 0.1));
+  box-shadow: 0 0 34px rgba(53, 182, 229, 0.2);
+  transform: none;
+}
+
+.poster-whole::after,
+.poster-wizard::after,
+.poster-spiral::after {
+  inset: auto 18% 30% 18%;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, transparent, var(--baby-blue), transparent);
+  opacity: 0.84;
+  transform: none;
+}
+
 .poster-label {
   position: absolute;
   left: 22px;
@@ -971,6 +1003,26 @@ h3 {
   background: rgba(13, 24, 29, 0.75);
   clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%, 8% 50%);
   text-align: center;
+}
+
+.poster-whole .poster-label,
+.poster-wizard .poster-label,
+.poster-spiral .poster-label {
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+  width: auto;
+  max-width: none;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  clip-path: none;
+  letter-spacing: 0;
+  text-align: left;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+  text-transform: none;
+  transform: none;
 }
 
 .game-card .poster-label {
@@ -1110,14 +1162,15 @@ h3 {
 
 .site-footer p {
   margin: 0;
+  text-align: center;
 }
 
-body.dark-mode {
+html.dark-mode body {
   background: #0b0d10;
   color: #f5f8fa;
 }
 
-body.dark-mode .site-header {
+html.dark-mode .site-header {
   background: rgba(10, 13, 16, 0.96);
   color: #f5f8fa;
   box-shadow:
@@ -1125,65 +1178,70 @@ body.dark-mode .site-header {
     0 2px 16px rgba(0, 0, 0, 0.35);
 }
 
-body.dark-mode .brand-word,
-body.dark-mode h1,
-body.dark-mode h2,
-body.dark-mode h3,
-body.dark-mode .game-select-copy .game-title,
-body.dark-mode .fact strong {
+html.dark-mode .brand-word,
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3,
+html.dark-mode .game-select-copy .game-title,
+html.dark-mode .fact strong {
   color: #f5f8fa;
 }
 
-body.dark-mode .top-tabs .nav-link,
-body.dark-mode .local-tabs .nav-link,
-body.dark-mode .theme-toggle {
+html.dark-mode .top-tabs .nav-link,
+html.dark-mode .local-tabs .nav-link,
+html.dark-mode .theme-toggle {
   border-color: rgba(53, 182, 229, 0.34);
   background: #13171b;
   color: #f5f8fa;
 }
 
-body.dark-mode .theme-toggle .moon-icon::after {
+html.dark-mode .theme-toggle .moon-icon::after {
   background: #13171b;
 }
 
-body.dark-mode .logo-tile,
-body.dark-mode .secondary-action,
-body.dark-mode .featured-copy,
-body.dark-mode .info-panel,
-body.dark-mode .fact {
+html.dark-mode .logo-tile,
+html.dark-mode .secondary-action,
+html.dark-mode .featured-copy,
+html.dark-mode .info-panel,
+html.dark-mode .fact {
   background: #12161a;
   border-color: rgba(53, 182, 229, 0.24);
 }
 
-body.dark-mode .landing-panel {
+html.dark-mode .logo-tile {
+  background: #000;
+  border-color: rgba(53, 182, 229, 0.42);
+}
+
+html.dark-mode .landing-panel {
   background:
     linear-gradient(135deg, rgba(8, 45, 61, 0.9), rgba(11, 13, 16, 0.78) 58%),
     linear-gradient(90deg, rgba(53, 182, 229, 0.18), transparent 48%);
   border-color: rgba(53, 182, 229, 0.34);
 }
 
-body.dark-mode .lead,
-body.dark-mode .featured-copy p,
-body.dark-mode .info-panel p,
-body.dark-mode .article-body p,
-body.dark-mode .kit-card p,
-body.dark-mode .empty-state p {
+html.dark-mode .lead,
+html.dark-mode .featured-copy p,
+html.dark-mode .info-panel p,
+html.dark-mode .article-body p,
+html.dark-mode .kit-card p,
+html.dark-mode .empty-state p {
   color: #c8d3dc;
 }
 
-body.dark-mode .landing-copy h1,
-body.dark-mode .landing-copy .eyebrow,
-body.dark-mode .eyebrow,
-body.dark-mode .secondary-action {
+html.dark-mode .landing-copy h1,
+html.dark-mode .landing-copy .eyebrow,
+html.dark-mode .eyebrow,
+html.dark-mode .secondary-action {
   color: var(--baby-blue);
 }
 
-body.dark-mode .game-select-copy .game-meta,
-body.dark-mode .site-footer {
+html.dark-mode .game-select-copy .game-meta,
+html.dark-mode .site-footer {
   color: #9eb0bd;
 }
 
-body.dark-mode .site-footer {
+html.dark-mode .site-footer {
   border-color: rgba(53, 182, 229, 0.26);
 }
 
@@ -1323,11 +1381,15 @@ body.dark-mode .site-footer {
 }
 
 .swatch-whole {
-  background: linear-gradient(135deg, #10151c, #1d9e93, #3c141c);
+  background: linear-gradient(135deg, #0c1014, #142733, #08171d);
 }
 
 .swatch-wizard {
-  background: linear-gradient(135deg, #123f3f, #d59f34, #415fd1);
+  background: linear-gradient(135deg, #0c1014, #142733, #08171d);
+}
+
+.swatch-spiral {
+  background: linear-gradient(135deg, #0c1014, #142733, #08171d);
 }
 
 @media (max-width: 900px) {
@@ -1477,6 +1539,23 @@ body.dark-mode .site-footer {
     right: auto;
     bottom: 20px;
     width: min(86%, 250px);
+  }
+
+  .poster-whole .poster-label,
+  .poster-wizard .poster-label,
+  .poster-spiral .poster-label {
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
+    width: auto;
+    max-width: none;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: none;
+    clip-path: none;
+    text-align: left;
+    transform: none;
   }
 
   .game-card .poster-label {
