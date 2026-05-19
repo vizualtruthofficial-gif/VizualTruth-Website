@@ -1209,8 +1209,12 @@ html.dark-mode .fact {
 }
 
 html.dark-mode .logo-tile {
-  background: #fff;
+  background: #fff !important;
   border-color: rgba(53, 182, 229, 0.42);
+}
+
+html.dark-mode .logo-tile img {
+  background: #fff;
 }
 
 html.dark-mode .landing-panel {
