@@ -43,8 +43,16 @@
         </div>
         </div>
         <div class="col-lg-7">
-        <div class="poster poster-night hero-poster" role="img" aria-label="Placeholder key art for Night Inn">
-          <span class="poster-label">Night Inn</span>
+        <div class="detail-carousel article-carousel has-multiple-slides" data-static-carousel>
+          <div class="detail-track" data-static-carousel-track tabindex="0" aria-label="Night Inn images">
+            <figure class="detail-slide"><img src="../Assets/Games/Night-Inn/night-inn-title.png" alt="Night Inn title artwork"></figure>
+            <figure class="detail-slide"><img src="../Assets/Games/Night-Inn/night-inn-description.png" alt="Night Inn description artwork"></figure>
+            <figure class="detail-slide"><img src="../Assets/Games/Night-Inn/night-inn-amy.png" alt="Amy character artwork"></figure>
+            <figure class="detail-slide"><img src="../Assets/Games/Night-Inn/night-inn-amy-trick.png" alt="Amy trick artwork"></figure>
+            <figure class="detail-slide"><img src="../Assets/Games/Night-Inn/night-inn-amy-treat.png" alt="Amy treat artwork"></figure>
+            <figure class="detail-slide"><img src="../Assets/Games/Night-Inn/night-inn-sketch.png" alt="Night Inn sketch artwork"></figure>
+          </div>
+          <div class="carousel-dots" data-static-carousel-dots aria-label="Image position"></div>
         </div>
         </div>
       </div>
@@ -78,8 +86,51 @@
   </main>
 
   <footer class="site-footer">
-    <p>VizualTruth</p>
+    <p>VizualTruth - 2026 - 1.2</p>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <script>
+    const track = document.querySelector("[data-static-carousel-track]");
+    const dots = document.querySelector("[data-static-carousel-dots]");
+    const slides = Array.from(track.children);
+    let currentSlide = 0;
+    let scrollTimer;
+
+    function updateDots() {
+      Array.from(dots.children).forEach((dot, index) => {
+        dot.classList.toggle("is-active", index === currentSlide);
+      });
+    }
+
+    function goToSlide(index) {
+      currentSlide = (index + slides.length) % slides.length;
+      track.scrollTo({ left: slides[currentSlide].offsetLeft, behavior: "smooth" });
+      updateDots();
+    }
+
+    slides.forEach((slide, index) => {
+      const dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "carousel-dot";
+      dot.setAttribute("aria-label", `Show image ${index + 1}`);
+      dot.addEventListener("click", () => goToSlide(index));
+      dots.append(dot);
+    });
+
+    track.addEventListener("scroll", () => {
+      window.clearTimeout(scrollTimer);
+      scrollTimer = window.setTimeout(() => {
+        const nearest = slides.reduce((best, slide, index) => {
+          const distance = Math.abs(slide.offsetLeft - track.scrollLeft);
+          return distance < best.distance ? { index, distance } : best;
+        }, { index: 0, distance: Number.POSITIVE_INFINITY });
+        currentSlide = nearest.index;
+        updateDots();
+      }, 180);
+    });
+
+    updateDots();
+    window.setInterval(() => goToSlide(currentSlide + 1), 3600);
+  </script>
 </body>
 </html>

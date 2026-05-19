@@ -48,20 +48,20 @@
 
       <div class="games-experience">
         <article class="game-detail-panel" aria-live="polite">
-          <div class="detail-carousel" data-carousel>
-            <div class="detail-track" data-carousel-track tabindex="0" aria-label="Selected game images"></div>
-            <button class="carousel-button carousel-button-prev" type="button" data-carousel-prev aria-label="Previous image">&lt;</button>
-            <button class="carousel-button carousel-button-next" type="button" data-carousel-next aria-label="Next image">&gt;</button>
-            <div class="carousel-dots" data-carousel-dots aria-label="Image position"></div>
-          </div>
-          <div class="detail-copy">
+          <div class="detail-title-box">
             <p class="eyebrow" data-detail-meta>In Pre-Production / Demo Target</p>
             <h3 data-detail-title>Night Inn</h3>
+          </div>
+          <div class="detail-copy">
             <p data-detail-description>Work the night shift, follow supernatural rules, check in strange guests, and survive until morning.</p>
             <div class="detail-actions">
               <a class="primary-action" data-detail-article href="games/night-inn.html">Read More</a>
               <a class="secondary-action" data-detail-press href="press-kits/night-inn.html">Press Kit</a>
             </div>
+          </div>
+          <div class="detail-carousel" data-carousel>
+            <div class="detail-track" data-carousel-track tabindex="0" aria-label="Selected game images"></div>
+            <div class="carousel-dots" data-carousel-dots aria-label="Image position"></div>
           </div>
         </article>
 
@@ -115,7 +115,7 @@
   </main>
 
   <footer class="site-footer">
-    <p>VizualTruth</p>
+    <p>VizualTruth - 2026 - 1.2</p>
   </footer>
   <script>
     const games = {
@@ -158,8 +158,6 @@
     const track = document.querySelector("[data-carousel-track]");
     const dots = document.querySelector("[data-carousel-dots]");
     const carousel = document.querySelector("[data-carousel]");
-    const prevButton = document.querySelector("[data-carousel-prev]");
-    const nextButton = document.querySelector("[data-carousel-next]");
     const detailMeta = document.querySelector("[data-detail-meta]");
     const detailTitle = document.querySelector("[data-detail-title]");
     const detailDescription = document.querySelector("[data-detail-description]");
@@ -271,8 +269,6 @@
       button.addEventListener("click", () => selectGame(button.dataset.game));
     });
 
-    prevButton.addEventListener("click", () => goToSlide(currentSlide - 1, true));
-    nextButton.addEventListener("click", () => goToSlide(currentSlide + 1, true));
     track.addEventListener("scroll", () => {
       window.clearTimeout(scrollTimer);
       scrollTimer = window.setTimeout(() => {
