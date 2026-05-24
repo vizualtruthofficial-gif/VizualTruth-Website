@@ -110,12 +110,10 @@ img {
   position: sticky;
   top: 0;
   z-index: 10;
-  border-bottom: 1px solid rgba(53, 182, 229, 0.36);
+  border-bottom: 4px solid rgba(53, 182, 229, 0.62);
   background: rgba(255, 255, 255, 0.96);
   color: var(--ink);
-  box-shadow:
-    inset 0 0 0 1px rgba(53, 182, 229, 0.18),
-    0 2px 16px rgba(16, 18, 20, 0.05);
+  box-shadow: 0 2px 16px rgba(16, 18, 20, 0.05);
   backdrop-filter: blur(12px);
 }
 
@@ -231,17 +229,32 @@ img {
   align-items: center;
   justify-content: center;
   padding: 0 16px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
   color: var(--ink);
-  background: var(--paper);
   font-size: 0.9rem;
   font-weight: 700;
   line-height: 1;
 }
 
+.top-tabs .nav-link {
+  border: 0;
+  border-bottom: 4px solid rgba(53, 182, 229, 0.62);
+  border-radius: 0;
+  background: transparent;
+}
+
+.local-tabs .nav-link {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--paper);
+}
+
 .top-tabs .nav-link:hover,
-.top-tabs .nav-link:focus-visible,
+.top-tabs .nav-link:focus-visible {
+  border-bottom-color: rgba(53, 182, 229, 0.96);
+  background: var(--baby-blue-soft);
+  color: #075a78;
+}
+
 .local-tabs .nav-link:hover,
 .local-tabs .nav-link:focus-visible,
 .local-tabs .nav-link.active {
@@ -321,7 +334,8 @@ h3 {
 }
 
 .landing-copy h1 {
-  color: #075a78;
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(7, 90, 120, 0.28);
 }
 
 .landing-copy .eyebrow {
@@ -443,7 +457,7 @@ h3 {
 
 .game-detail-panel {
   display: grid;
-  grid-template-columns: minmax(230px, 18%) minmax(320px, 1fr) minmax(520px, 38%);
+  grid-template-columns: minmax(300px, 32%) minmax(160px, 0.45fr) minmax(360px, 42%);
   gap: 18px;
   align-items: stretch;
   min-height: 420px;
@@ -1171,11 +1185,10 @@ html.dark-mode body {
 }
 
 html.dark-mode .site-header {
+  border-bottom-color: rgba(53, 182, 229, 0.72);
   background: rgba(10, 13, 16, 0.96);
   color: #f5f8fa;
-  box-shadow:
-    inset 0 0 0 1px rgba(53, 182, 229, 0.32),
-    0 2px 16px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
 }
 
 html.dark-mode .brand-word,
@@ -1193,6 +1206,18 @@ html.dark-mode .theme-toggle {
   border-color: rgba(53, 182, 229, 0.34);
   background: #13171b;
   color: #f5f8fa;
+}
+
+html.dark-mode .top-tabs .nav-link {
+  border-color: rgba(53, 182, 229, 0.72);
+  background: transparent;
+}
+
+html.dark-mode .top-tabs .nav-link:hover,
+html.dark-mode .top-tabs .nav-link:focus-visible {
+  border-bottom-color: rgba(53, 182, 229, 0.96);
+  background: rgba(53, 182, 229, 0.14);
+  color: var(--baby-blue);
 }
 
 html.dark-mode .theme-toggle .moon-icon::after {
@@ -1233,7 +1258,6 @@ html.dark-mode .empty-state p {
   color: #c8d3dc;
 }
 
-html.dark-mode .landing-copy h1,
 html.dark-mode .landing-copy .eyebrow,
 html.dark-mode .eyebrow,
 html.dark-mode .secondary-action {
@@ -1303,6 +1327,19 @@ html.dark-mode .site-footer {
   border: 1px solid rgba(16, 18, 20, 0.18);
   border-radius: 8px;
   box-shadow: var(--shadow);
+}
+
+.press-hero-image {
+  overflow: hidden;
+  background: #090b0d;
+}
+
+.press-hero-image img {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  object-position: center;
 }
 
 .content-shell {
@@ -1386,6 +1423,25 @@ html.dark-mode .site-footer {
 
 .swatch-whole {
   background: linear-gradient(135deg, #0c1014, #142733, #08171d);
+}
+
+.asset-image {
+  display: block;
+  aspect-ratio: 16 / 9;
+  min-height: 160px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(16, 18, 20, 0.14);
+  border-radius: 8px;
+  background: #090b0d;
+  box-shadow: var(--shadow);
+}
+
+.asset-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .swatch-wizard {
