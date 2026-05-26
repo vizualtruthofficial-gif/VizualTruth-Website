@@ -3120,3 +3120,21 @@ body.landing-home main {
     margin-top: 140px;
   }
 }
+
+body.landing-home .feature-media-panel {
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+}
+
+body.landing-home .landing-carousel {
+  width: min(1640px, 86vw);
+  max-width: none;
+  z-index: 3;
+}
+
+@media (max-width: 980px) {
+  body.landing-home .landing-carousel {
+    width: min(980px, 112vw);
+  }
+}
