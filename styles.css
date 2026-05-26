@@ -2776,3 +2776,151 @@ html.dark-mode .footer-socials a {
     text-align: left;
   }
 }
+
+.landing-home .landing-carousel .detail-slide img {
+  object-fit: cover;
+}
+
+.catalog-section {
+  margin: 0 auto clamp(78px, 10vw, 132px);
+  padding-top: 0;
+}
+
+.catalog-title-box {
+  width: 100%;
+  min-height: 68px;
+  margin: 0;
+  padding: 0 24px;
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+}
+
+.catalog-title-box h2 {
+  font-size: clamp(1.15rem, 1.55vw, 1.45rem);
+  line-height: 1;
+  text-transform: none;
+}
+
+.landing-home .game-title-grid {
+  grid-template-columns: minmax(260px, 340px);
+  justify-content: start;
+  margin-top: 34px;
+}
+
+.landing-home .game-select-card {
+  max-width: 340px;
+}
+
+.merch-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.merch-body main {
+  flex: 1;
+  display: flex;
+}
+
+.merch-body .merch-page {
+  flex: 1;
+}
+
+.merch-body .site-footer {
+  margin-top: auto;
+}
+
+body.has-gallery-viewer {
+  overflow: hidden;
+}
+
+.gallery-viewer[hidden] {
+  display: none;
+}
+
+.gallery-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: clamp(14px, 3vw, 34px);
+  background: rgba(7, 14, 18, 0.84);
+  backdrop-filter: blur(10px);
+}
+
+.gallery-viewer-shell {
+  width: min(1160px, 100%);
+  max-height: min(880px, calc(100vh - 28px));
+  display: grid;
+  gap: 12px;
+}
+
+.gallery-back-button {
+  width: fit-content;
+  justify-self: start;
+  box-shadow: 0 10px 26px rgba(16, 18, 20, 0.18);
+}
+
+.gallery-viewer-frame {
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(53, 182, 229, 0.54);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow:
+    0 24px 62px rgba(0, 0, 0, 0.34),
+    0 0 46px rgba(53, 182, 229, 0.24);
+}
+
+.gallery-viewer-frame img {
+  width: 100%;
+  height: min(74vh, 720px);
+  object-fit: contain;
+  background: #fff;
+}
+
+.gallery-viewer-frame figcaption {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  font-weight: 850;
+}
+
+html.dark-mode .gallery-viewer-frame figcaption {
+  border-color: rgba(53, 182, 229, 0.22);
+  background: #12161a;
+  color: #f5f8fa;
+}
+
+.gallery-viewer {
+  display: none;
+}
+
+.gallery-viewer:target {
+  display: grid;
+}
+
+@media (max-width: 1080px) {
+  .catalog-title-box {
+    width: 100%;
+  }
+
+  .landing-home .game-title-grid {
+    justify-content: start;
+  }
+}
+
+@media (max-width: 720px) {
+  .catalog-title-box {
+    min-height: 62px;
+  }
+
+  .landing-home .game-title-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
