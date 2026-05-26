@@ -3193,3 +3193,39 @@ body.landing-home .feature-media-panel > .landing-carousel .detail-slide img {
   transform: scale(1.18);
   transform-origin: center;
 }
+
+body.landing-home .feature-media-panel .landing-photo-carousel,
+body.landing-home .feature-media-panel .landing-photo-carousel .detail-track,
+body.landing-home .feature-media-panel .landing-photo-carousel .detail-slide {
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  outline: 0 !important;
+}
+
+body.landing-home .feature-media-panel .landing-photo-carousel {
+  width: min(780px, 66vw) !important;
+  height: min(780px, 66vw) !important;
+  overflow: visible !important;
+}
+
+body.landing-home .feature-media-panel .landing-photo-carousel .detail-track {
+  overflow: visible !important;
+}
+
+body.landing-home .feature-media-panel .landing-photo-carousel .detail-slide {
+  overflow: visible !important;
+}
+
+body.landing-home .feature-media-panel .landing-photo-carousel .detail-slide img {
+  width: 100% !important;
+  height: 100% !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  object-fit: contain !important;
+  transform: scale(1.35) !important;
+  transform-origin: center center !important;
+}
