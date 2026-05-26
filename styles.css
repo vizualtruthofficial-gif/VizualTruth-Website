@@ -3057,3 +3057,54 @@ body.landing-home .game-select-card:focus-visible .game-thumb {
     margin-top: 90px;
   }
 }
+
+body.landing-home .landing-feature {
+  min-height: clamp(560px, 42vw, 690px);
+}
+
+body.landing-home .feature-media-panel {
+  padding: clamp(12px, 2vw, 28px);
+}
+
+body.landing-home .landing-carousel {
+  width: min(100%, 620px);
+  border-radius: 30px;
+}
+
+body.landing-home .landing-link-grid {
+  width: min(1880px, calc(100% - 52px));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: clamp(240px, 24vw, 390px);
+  margin-bottom: clamp(26px, 4vw, 56px);
+}
+
+body.landing-home .landing-link-panel {
+  min-height: clamp(260px, 20vw, 330px);
+}
+
+body.landing-home .landing-link-panel p:not(.eyebrow) {
+  max-width: 46ch;
+}
+
+body.landing-home #contact p:not(.eyebrow) {
+  max-width: 52ch;
+}
+
+body.landing-home main {
+  padding-bottom: clamp(26px, 5vw, 70px);
+}
+
+@media (max-width: 980px) {
+  body.landing-home .landing-feature {
+    min-height: auto;
+  }
+
+  body.landing-home .landing-carousel {
+    width: min(100%, 620px);
+  }
+
+  body.landing-home .landing-link-grid {
+    grid-template-columns: 1fr;
+    margin-top: 140px;
+  }
+}
