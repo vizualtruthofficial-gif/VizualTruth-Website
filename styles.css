@@ -3128,7 +3128,7 @@ body.landing-home .feature-media-panel {
 }
 
 body.landing-home .landing-carousel {
-  width: min(1640px, 172vw);
+  width: min(900px, 74vw);
   max-width: none;
   aspect-ratio: 1 / 1;
   overflow: visible;
