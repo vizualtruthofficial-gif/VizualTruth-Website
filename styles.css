@@ -2968,6 +2968,18 @@ html.dark-mode .gallery-viewer-frame figcaption {
   margin-top: 12px;
 }
 
+body.landing-home main {
+  padding-bottom: clamp(90px, 14vw, 190px);
+}
+
+body.landing-home .catalog-section {
+  margin-bottom: clamp(120px, 16vw, 220px);
+}
+
+body.landing-home .landing-link-grid {
+  margin-bottom: clamp(90px, 12vw, 170px);
+}
+
 @media (max-width: 1080px) {
   .catalog-section {
     grid-template-columns: 1fr;
