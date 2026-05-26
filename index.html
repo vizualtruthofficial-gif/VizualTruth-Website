@@ -23,7 +23,7 @@
   </style>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="landing-home">
   <header class="site-header navbar navbar-expand-sm">
     <div class="container nav-shell">
       <a class="navbar-brand brand-link" href="index.html" aria-label="VizualTruth home">
@@ -35,6 +35,7 @@
       <nav class="nav nav-pills top-tabs" aria-label="Main navigation">
         <a class="nav-link" href="#games">Games</a>
         <a class="nav-link" href="#merch">Merch</a>
+        <a class="nav-link" href="#gallery">Gallery</a>
         <a class="nav-link" href="#contact">Contact</a>
       </nav>
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Toggle dark mode">
@@ -44,71 +45,87 @@
   </header>
 
   <main>
-    <section class="container landing-panel" aria-labelledby="studio-title">
-      <div class="row align-items-center g-5">
-        <div class="col-12 landing-copy">
-          <p class="eyebrow">Anything is Possible</p>
-          <h1 id="studio-title">VizualTruth</h1>
-          <p class="lead">Games made with passion &amp; creativity</p>
-          <div class="hero-actions">
-            <a class="primary-action" href="#games">Explore Games</a>
-          </div>
+    <section class="landing-feature" aria-labelledby="selected-game-title">
+      <div class="selected-game-panel">
+        <p class="eyebrow">Game Selected</p>
+        <h2 id="selected-game-title" data-detail-title>Night Inn</h2>
+        <p class="feature-status" data-detail-meta>In Pre-Production / Demo Target</p>
+        <div class="detail-actions">
+          <a class="primary-action" data-detail-article href="games/night-inn.html">Read More</a>
+          <a class="secondary-action" data-detail-press href="press-kits/night-inn.html">Press Kit</a>
         </div>
       </div>
+
+      <div class="feature-media-panel">
+        <div class="detail-carousel landing-carousel" data-carousel>
+          <div class="detail-track" data-carousel-track tabindex="0" aria-label="Selected game images"></div>
+          <div class="carousel-dots" data-carousel-dots aria-label="Image position"></div>
+        </div>
+      </div>
+
+      <aside class="feature-about-panel" aria-labelledby="about-title">
+        <h2 id="about-title">About:</h2>
+        <p data-detail-description>Survive the night shift.</p>
+        <dl class="about-facts">
+          <div>
+            <dt>Genre</dt>
+            <dd>Psychological horror</dd>
+          </div>
+          <div>
+            <dt>Mode</dt>
+            <dd>Single player</dd>
+          </div>
+          <div>
+            <dt>Engine</dt>
+            <dd>Unreal Engine 5.6</dd>
+          </div>
+        </dl>
+      </aside>
     </section>
 
-    <section class="container section-shell" id="games" aria-labelledby="games-title">
-      <div class="section-heading compact-heading">
+    <section class="studio-band" aria-labelledby="studio-title">
+      <h1 id="studio-title">VizualTruth</h1>
+      <p class="studio-line">Games made with passion and creativity</p>
+      <p class="studio-tagline">Anything is possible</p>
+    </section>
+
+    <section class="catalog-section" id="games" aria-labelledby="games-title">
+      <div class="catalog-title-box">
         <p class="eyebrow">Current focus</p>
-        <h2 id="games-title">Games</h2>
+        <h2 id="games-title">Games Catalog</h2>
       </div>
 
-      <div class="games-experience">
-        <article class="game-detail-panel" aria-live="polite">
-          <div class="detail-title-box">
-            <p class="eyebrow" data-detail-meta>In Pre-Production / Demo Target</p>
-            <h3 data-detail-title>Night Inn</h3>
-          </div>
-          <div class="detail-copy">
-            <p data-detail-description>Survive the night shift.</p>
-            <div class="detail-actions">
-              <a class="primary-action" data-detail-article href="games/night-inn.html">Read More</a>
-              <a class="secondary-action" data-detail-press href="press-kits/night-inn.html">Press Kit</a>
-            </div>
-          </div>
-          <div class="detail-carousel" data-carousel>
-            <div class="detail-track" data-carousel-track tabindex="0" aria-label="Selected game images"></div>
-            <div class="carousel-dots" data-carousel-dots aria-label="Image position"></div>
-          </div>
-        </article>
-
-        <div class="game-title-grid" role="list" aria-label="Featured game">
-          <button class="game-select-card game-card-night is-active" type="button" data-game="night-inn" aria-pressed="true">
-            <span class="game-thumb">
-              <img src="Assets/Games/Night-Inn/night-inn-title.png" alt="Night Inn title artwork">
-            </span>
-            <span class="game-select-copy">
-              <span class="game-meta">In Pre-Production</span>
-              <span class="game-title">Night Inn</span>
-            </span>
-          </button>
-
-        </div>
+      <div class="game-title-grid" role="list" aria-label="Featured game">
+        <button class="game-select-card game-card-night is-active" type="button" data-game="night-inn" aria-pressed="true">
+          <span class="game-thumb">
+            <img src="Assets/Games/Night-Inn/night-inn-title.png" alt="Night Inn title artwork">
+          </span>
+          <span class="game-select-copy">
+            <span class="game-meta">In Pre-Production</span>
+            <span class="game-title">Night Inn</span>
+          </span>
+        </button>
       </div>
     </section>
 
-    <section class="container section-shell small-info-grid" id="merch" aria-label="Studio information">
-      <div class="info-panel">
-        <p class="eyebrow">Merch</p>
-        <h2>Coming Soon</h2>
-        <p>VizualTruth Merch is coming soon.</p>
-      </div>
-      <div class="info-panel" id="contact">
-        <p class="eyebrow">Contact</p>
-        <h2>Reach VizualTruth</h2>
+    <section class="landing-link-grid" aria-label="Studio destinations">
+      <article class="landing-link-panel" id="merch">
+        <p class="eyebrow">Shop</p>
+        <h2>Merch</h2>
+        <p>VizualTruth merch is coming soon.</p>
+      </article>
+      <article class="landing-link-panel" id="gallery">
+        <p class="eyebrow">Media</p>
+        <h2>Gallery</h2>
+        <p>Browse current Night Inn artwork and development images.</p>
+        <a class="secondary-action" href="press-kits/night-inn.html">View Images</a>
+      </article>
+      <article class="landing-link-panel" id="contact">
+        <p class="eyebrow">Business</p>
+        <h2>Contact</h2>
         <p>For press, business, contractor, or collaboration inquiries.</p>
-        <a class="primary-action" href="mailto:vizualtruthofficial@gmail.com">vizualtruthofficial@gmail.com</a>
-      </div>
+        <a class="primary-action" href="mailto:vizualtruthofficial@gmail.com">Email VizualTruth</a>
+      </article>
     </section>
   </main>
 
@@ -121,7 +138,7 @@
       "night-inn": {
         title: "Night Inn",
         meta: "In Pre-Production / Demo Target",
-        description: "Survive the night shift.",
+        description: "A first-person psychological horror game about rules, trust, and surviving a haunted hotel reception shift.",
         article: "games/night-inn.html",
         press: "press-kits/night-inn.html",
         images: [
