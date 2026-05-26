@@ -3177,13 +3177,19 @@ body.landing-home .feature-media-panel > .landing-carousel .detail-track {
 
 body.landing-home .feature-media-panel > .landing-carousel,
 body.landing-home .feature-media-panel > .landing-carousel .detail-slide {
-  overflow: hidden !important;
-  background: #06161d !important;
-  border-radius: 30px !important;
+  overflow: visible !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
 }
 
 body.landing-home .feature-media-panel > .landing-carousel .detail-slide img {
-  background: #06161d !important;
-  border-radius: 30px !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   object-fit: contain !important;
+  transform: scale(1.18);
+  transform-origin: center;
 }
