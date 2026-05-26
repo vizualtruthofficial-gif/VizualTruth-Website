@@ -2993,3 +2993,67 @@ body.landing-home .landing-link-grid {
     margin-top: 0;
   }
 }
+
+body.landing-home .feature-media-panel {
+  place-items: center;
+  padding: clamp(18px, 2.8vw, 34px);
+}
+
+body.landing-home .landing-carousel {
+  width: min(100%, 460px);
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: 1px solid rgba(53, 182, 229, 0.5);
+  border-radius: 28px;
+  box-shadow:
+    0 22px 48px rgba(16, 18, 20, 0.14),
+    0 0 46px rgba(53, 182, 229, 0.3);
+}
+
+body.landing-home .landing-carousel .detail-track,
+body.landing-home .landing-carousel .detail-slide {
+  height: 100%;
+}
+
+body.landing-home .landing-carousel .detail-slide {
+  aspect-ratio: 1 / 1;
+}
+
+body.landing-home .landing-carousel .detail-slide img {
+  object-fit: cover;
+}
+
+body.landing-home .landing-link-grid {
+  margin-top: clamp(120px, 14vw, 220px);
+  margin-bottom: clamp(100px, 12vw, 180px);
+}
+
+body.landing-home .game-select-card {
+  transition: transform 180ms ease;
+}
+
+body.landing-home .game-select-card:hover,
+body.landing-home .game-select-card:focus-visible {
+  transform: translateY(-8px);
+}
+
+body.landing-home .game-select-card:hover .game-thumb,
+body.landing-home .game-select-card:focus-visible .game-thumb {
+  border-color: rgba(53, 182, 229, 0.86);
+  box-shadow:
+    0 20px 48px rgba(16, 18, 20, 0.16),
+    0 0 0 1px rgba(53, 182, 229, 0.3),
+    0 0 42px rgba(53, 182, 229, 0.44);
+}
+
+@media (max-width: 720px) {
+  body.landing-home .landing-carousel {
+    width: min(100%, 420px);
+  }
+
+  body.landing-home .landing-link-grid {
+    margin-top: 90px;
+  }
+}
