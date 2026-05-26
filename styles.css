@@ -3261,7 +3261,7 @@ body.landing-home .feature-media-panel .landing-photo-carousel .detail-slide {
 body.landing-home .feature-media-panel .landing-photo-carousel .detail-slide img {
   width: 100% !important;
   height: 100% !important;
-  object-fit: cover !important;
-  transform: scale(1.04) !important;
+  object-fit: contain !important;
+  transform: none !important;
   transform-origin: center center !important;
 }
