@@ -3159,3 +3159,18 @@ body.landing-home .landing-carousel .detail-slide img {
     transform: scale(1.35);
   }
 }
+
+body.landing-home .feature-media-panel > .landing-carousel {
+  width: min(620px, 58vw) !important;
+  height: min(620px, 58vw) !important;
+  max-width: none !important;
+  min-height: 0 !important;
+  aspect-ratio: 1 / 1 !important;
+  transform: none !important;
+}
+
+body.landing-home .feature-media-panel > .landing-carousel .detail-slide,
+body.landing-home .feature-media-panel > .landing-carousel .detail-track {
+  width: 100% !important;
+  height: 100% !important;
+}
