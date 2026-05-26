@@ -3174,3 +3174,13 @@ body.landing-home .feature-media-panel > .landing-carousel .detail-track {
   width: 100% !important;
   height: 100% !important;
 }
+
+body.landing-home .feature-media-panel > .landing-carousel,
+body.landing-home .feature-media-panel > .landing-carousel .detail-slide {
+  background: transparent !important;
+}
+
+body.landing-home .feature-media-panel > .landing-carousel .detail-slide img {
+  background: transparent !important;
+  object-fit: cover !important;
+}
