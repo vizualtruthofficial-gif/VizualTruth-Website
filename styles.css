@@ -3205,17 +3205,20 @@ body.landing-home .feature-media-panel .landing-photo-carousel .detail-slide {
 }
 
 body.landing-home .feature-media-panel .landing-photo-carousel {
-  width: min(780px, 66vw) !important;
-  height: min(780px, 66vw) !important;
-  overflow: visible !important;
+  width: min(760px, 62vw) !important;
+  height: auto !important;
+  aspect-ratio: 4 / 3 !important;
+  overflow: hidden !important;
 }
 
 body.landing-home .feature-media-panel .landing-photo-carousel .detail-track {
-  overflow: visible !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
 }
 
 body.landing-home .feature-media-panel .landing-photo-carousel .detail-slide {
-  overflow: visible !important;
+  overflow: hidden !important;
+  aspect-ratio: 4 / 3 !important;
 }
 
 body.landing-home .feature-media-panel .landing-photo-carousel .detail-slide img {
@@ -3226,6 +3229,39 @@ body.landing-home .feature-media-panel .landing-photo-carousel .detail-slide img
   box-shadow: none !important;
   background: transparent !important;
   object-fit: contain !important;
-  transform: scale(1.35) !important;
+  transform: none !important;
+  transform-origin: center center !important;
+}
+
+body.landing-home .feature-media-panel .landing-photo-carousel .carousel-dots {
+  bottom: 12px !important;
+  z-index: 4;
+}
+
+body.landing-home .feature-media-panel {
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+body.landing-home .feature-media-panel .landing-photo-carousel {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: auto !important;
+  overflow: hidden !important;
+}
+
+body.landing-home .feature-media-panel .landing-photo-carousel .detail-track,
+body.landing-home .feature-media-panel .landing-photo-carousel .detail-slide {
+  width: 100% !important;
+  height: 100% !important;
+  aspect-ratio: auto !important;
+  overflow: hidden !important;
+}
+
+body.landing-home .feature-media-panel .landing-photo-carousel .detail-slide img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  transform: scale(1.04) !important;
   transform-origin: center center !important;
 }
