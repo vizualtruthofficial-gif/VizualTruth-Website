@@ -3339,3 +3339,90 @@ body.landing-home .feature-media-panel .landing-photo-carousel .carousel-dots {
     height: min(72vw, 520px) !important;
   }
 }
+
+/* Final landing slider fit: preserve the photo, scale by height, and let the side panels yield space. */
+body.landing-home .landing-feature {
+  height: clamp(560px, 36vw, 720px) !important;
+  min-height: clamp(560px, 36vw, 720px) !important;
+  grid-template-columns: minmax(220px, 24%) minmax(760px, 52%) minmax(220px, 24%) !important;
+  overflow: hidden !important;
+}
+
+body.landing-home .selected-game-panel,
+body.landing-home .feature-about-panel {
+  min-width: 0 !important;
+  padding: clamp(18px, 3vw, 46px) !important;
+}
+
+body.landing-home .feature-media-panel {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+body.landing-home .feature-media-panel .landing-photo-carousel,
+body.landing-home .feature-media-panel .landing-photo-carousel .detail-track,
+body.landing-home .feature-media-panel .landing-photo-carousel .detail-slide {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  aspect-ratio: auto !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+body.landing-home .feature-media-panel .landing-photo-carousel {
+  overflow: hidden !important;
+}
+
+body.landing-home .feature-media-panel .landing-photo-carousel .detail-track {
+  display: flex !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+}
+
+body.landing-home .feature-media-panel .landing-photo-carousel .detail-slide {
+  flex: 0 0 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+body.landing-home .feature-media-panel .landing-photo-carousel .detail-slide img {
+  display: block !important;
+  width: auto !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+body.landing-home .feature-media-panel .landing-photo-carousel .carousel-dots {
+  bottom: 10px !important;
+  z-index: 5 !important;
+}
+
+@media (max-width: 980px) {
+  body.landing-home .landing-feature {
+    height: auto !important;
+    min-height: auto !important;
+    grid-template-columns: 1fr !important;
+    overflow: visible !important;
+  }
+
+  body.landing-home .feature-media-panel {
+    height: min(78vw, 560px) !important;
+  }
+}
