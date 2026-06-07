@@ -1371,6 +1371,70 @@ html.dark-mode .site-footer {
   font-size: 1.08rem;
 }
 
+.night-inn-noise-article {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(22px, 4vw, 42px);
+  border: 1px solid rgba(167, 31, 42, 0.36);
+  border-radius: 8px;
+  background:
+    radial-gradient(circle at 18% 14%, rgba(167, 31, 42, 0.34), transparent 34%),
+    radial-gradient(circle at 86% 22%, rgba(53, 182, 229, 0.14), transparent 31%),
+    linear-gradient(145deg, #09090c 0%, #140b0f 48%, #241016 100%);
+  box-shadow:
+    0 24px 62px rgba(16, 18, 20, 0.18),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  image-rendering: pixelated;
+  mix-blend-mode: screen;
+  opacity: 0.7;
+}
+
+.night-inn-noise-article::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04), transparent 18%, transparent 82%, rgba(0, 0, 0, 0.18)),
+    radial-gradient(ellipse at center, transparent 0 58%, rgba(0, 0, 0, 0.28) 100%);
+}
+
+.night-inn-noise-article > :not(.noise-overlay) {
+  position: relative;
+  z-index: 1;
+}
+
+.night-inn-noise-article p {
+  color: #d7e0e6;
+}
+
+.night-inn-noise-article .fact {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: rgba(10, 13, 16, 0.72);
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.24),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(8px);
+}
+
+.night-inn-noise-article .fact strong {
+  color: #f5f8fa;
+}
+
+.night-inn-noise-article .fact .stat-label {
+  color: #9eb0bd;
+}
+
 .fact-row {
   margin-top: 4px;
 }

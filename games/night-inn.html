@@ -76,7 +76,17 @@
       </div>
     </section>
 
-    <article class="container content-shell article-body">
+    <article class="container content-shell article-body night-inn-noise-article">
+      <canvas
+        class="noise-overlay"
+        data-noise
+        data-pattern-size="250"
+        data-pattern-scale-x="1"
+        data-pattern-scale-y="1"
+        data-pattern-refresh-interval="2"
+        data-pattern-alpha="15"
+        aria-hidden="true"
+      ></canvas>
       <p>Night Inn is a first-person psychological horror game where the player works a hotel reception shift, checks in strange guests, follows supernatural rules, and survives entities that use fear, mimicry, and panic against them.</p>
       <p>The project focuses on pressure over spectacle: reading rules carefully, choosing when to trust what appears at the desk, and staying calm while the hotel turns routine guest service into a survival problem.</p>
       <p>VizualTruth is building Night Inn toward a public demo target. Final release details, platform links, screenshots, trailers, and store pages will be added as the project moves closer to public release.</p>
@@ -133,6 +143,7 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   <script src="../theme.js"></script>
+  <script src="../noise.js"></script>
   <script>
     const track = document.querySelector("[data-static-carousel-track]");
     const dots = document.querySelector("[data-static-carousel-dots]");
